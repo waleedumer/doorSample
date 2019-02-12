@@ -44,7 +44,26 @@ nav > .nav.nav-tabs{
       border-bottom:5px solid #e74c3c;
       padding:30px 25px;
   }
-  
+  .m-top{
+    margin-top: 4%;
+  }
+.heading{
+  margin-bottom: 20px;
+}
+
+.preview-img{
+  position:absolute;
+  left:25%;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: width 0.5s ease-out;
+}
+
+.transparent {
+  width: 50%
+  }
+
   nav > div a.nav-item.nav-link:hover,
   nav > div a.nav-item.nav-link:focus
   {
