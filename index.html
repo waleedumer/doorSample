@@ -24,7 +24,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Doors & Windows Visualizer</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
   </nav>
 
   <!-- Page Content -->
-  <div class="container-fluid">
+  <div class="container-fluid m-top">
     <div class="row">
       <!-- Left Section Start -->
       <div class="col-12 col-md-8 p-0">
@@ -69,46 +69,80 @@
         </nav>
         <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
           <div class="tab-pane fade show active p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-              <h3 class="text-center display-5">Door Designs</h3>
+              <h3 class="text-center heading">Door Designs</h3>
+              <div class="row">
+                  <div class="col-12 col-md-3">
+                    <img class="img-fluid" src="images/Columbus/PD500 Blue Star Bevel .jpg" alt="">
+                    <p>PD500 Blue Star Bevel </p>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <img class="img-fluid" src="images/Columbus/PD501 New Tara.jpg" alt="">
+                    <p>PD501 New Tara</p>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <img class="img-fluid" src="images/Columbus/PD502 Crystal Gem.jpg" alt="">
+                    <p>PD502 Crystal Gem</p>
+                  </div>
+                  <div class="col-12 col-md-3">
+                      <img class="img-fluid" src="images/Columbus/PD503 Clear Crystal.jpg" alt="">
+                      <p>PD503 Clear Crystal</p>
+                    </div>
+                    <div class="col-12 col-md-3">
+                      <img class="img-fluid" src="images/Columbus/PD504 Georgian Bar .png" alt="">
+                      <p>PD504 Georgian Bar</p>
+                    </div>
+                    <div class="col-12 col-md-3">
+                      <img class="img-fluid" src="images/Columbus/PD505 Blue Orbit.png" alt="">
+                      <p>PD505 Blue Orbit</p>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <img class="img-fluid" src="images/Columbus/PD506 Crystal Pearl.png" alt="">
+                        <p>PD506 Crystal Pearl</p>
+                      </div>
+                      <div class="col-12 col-md-3">
+                        <img class="img-fluid" src="images/Columbus/PD507 Diamond Lead.png" alt="">
+                        <p>PD507 Diamond Lead</p>
+                      </div>
+              </div>
 
           </div>
           <div class="tab-pane fade p-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              <h3 class="text-center display-5">Glass Designs</h3>
+              <h3 class="text-center heading">Glass Designs</h3>
           </div>
           <div class="tab-pane fade p-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-              <h3 class="text-center display-5">Color Theme</h3>
+              <h3 class="text-center heading">Color Theme</h3>
           </div>
           <div class="tab-pane fade p-3" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-              <h3 class="text-center display-5">Accesories</h3>
+              <h3 class="text-center heading">Accesories</h3>
           </div>
         </div>
       </div>
       <!-- Left Section End -->
 
       <!-- Right Section Started -->
-      <div class="col-12 col-md-4 background-dark preview-window p-3">
-        <h3 class="text-center text-light">Preview</h3>
+      <div class="col-12 col-md-4 background-dark preview-window p-3 text-center">
+        <h4 class="text-center text-light mb-4">Preview</h4>
+        <p class="door-name text-center text-light">PD500 Blue Star Bevel</p>
+        <img src="images/Columbus/PD500 Blue Star Bevel .jpg" class="preview-img " width="50%" alt="">
       </div>
       <!-- Right Section Ended -->
     </div>
   </div>
 
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
 <script>
-var dir = "images/Columbus/";
-var fileextension = ".png";
-$.ajax({
-    //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-    url: dir,
-    success: function (data) {
-        //List all .png file names in the page
-        $(data).find("a:contains(" + fileextension + ")").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http://", "");
-            console.log(filename);
-            // $("body").append("<img src='" + dir + filename + "'>");
-        });
-    }
-});
-
+$(document).ready(function(){
+  $('.img-fluid').click(function(){
+    var url = $(this).attr('src');
+    $('.preview-img').attr('src', url);
+    
+    var name = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("."))
+    $('.door-name').html(name);
+  })
+})
 </script>
 </html>
