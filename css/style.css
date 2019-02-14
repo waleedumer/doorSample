@@ -20,6 +20,10 @@ nav > .nav.nav-tabs{
 .background-dark{
   background:#272e38;
 }
+.accordion .btn-link{
+  text-decoration: none !important;
+}
+
 
 .preview-window{
  height: 100vh;
@@ -64,6 +68,18 @@ nav > .nav.nav-tabs{
   width: 50%
   }
 
+  .category-nav .nav.nav-tabs{
+      background: none !important;
+  }
+
+  .category-nav .nav-item{
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+  }
+  nav.category-nav .nav-item {
+    flex: none;
+    padding: 10px 35px !important;
+}
   nav > div a.nav-item.nav-link:hover,
   nav > div a.nav-item.nav-link:focus
   {
@@ -73,3 +89,5 @@ nav > .nav.nav-tabs{
       border-radius:0;
       transition:background 0.20s linear;
   }
+
+  
